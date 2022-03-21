@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super-Giggle - home</title>
+    <title>{req : '<%= id_ %>' 'url' }</title>
 </head>
 <body>
-    <h1>Welcome to Super-Giggle</h1>
-    <% for (var i = 0 ; i <=5 ; i++) { %>
-        <a href="/<%= i %>">link [<%= i %>] %></a> <br>
-        <%} %>
+    <h1><%= id_ %></h1>
+    <!-- id_ -> idx -->
 </body>
 </html>
