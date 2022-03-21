@@ -8,6 +8,12 @@
 </head>
 <body>
     <h1>Welcome to Super-Giggle</h1>
+    <!-- user search query [ -->
+    <form action="/search_credentials" method="post">
+    <input type="search" name="s/q" />
+    <button type="submit">submit</button>
+    </form>
+    <!-- ] -->
     <% for (var i = 0 ; i <=5 ; i++) { %>
         <a href="/<%= i %>">link [<%= i %>] %></a> <br>
         <%} %>

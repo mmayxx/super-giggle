@@ -28,5 +28,11 @@ module.exports.Data = [
         company: 'Airbnb',
         sym: 'ARB',
         eps: 5,
+    },
+    {
+        id_: 6,
+        company: 'Walmart Inc',
+        sym: 'WMT',
+        eps: 6,
     }
 ]
