@@ -23,15 +23,11 @@ app.post('/search_credentials', function(req, res, next) {
         query.length != 0 ?
         companies[i].company.includes(query) ? 
         $_result.push($_data['Data'][i])
-        : 
+        :
         null // --> Error 404 not found
         :
         null// --> send recommendations
     }
-
-    $_result.length == 0 ?
-    console.log('Error 404 not found') 
-    :
-    console.log(`Found match(es) : ${$_result}`)
+    res.render('search_result', {result : $_result})
 })
 app.listen(port, () => {console.log(`super-giggle running on port : ${port}`)})
