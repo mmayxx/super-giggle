@@ -8,6 +8,14 @@
 </head>
 <body>
     <h1>Welcome to Super-Giggle</h1>
+    <div id="div_height" style="width: 100%; height: 500px; outline: 1px solid green;">
+    <div id="counter" style="border-radius: 100%; background-color: #000; position: absolute; outline: 1px solid tomato; width: 25px; height: 25px; margin-left: 100px;" ></div>
+    <!-- div 2 [counter2] [ -->
+    <div id="counter2" style="border-radius: 100%; background-color: #000; position: absolute; outline: 1px solid tomato; width: 25px; height: 25px; margin-left: 150px;" ></div>
+    <!-- counter2 -- ] -->
+    <svg style="width: 500px; height: 500px;"><line id="line" x2="165" y1="250"y2="0" stroke="black" /></svg>
+    <!-- svg style height & width inherit || 500px -->
+    </div>
     <!-- user search query [ -->
     <form action="/search_credentials" method="post">
     <input type="search" name="s/q" />
@@ -17,5 +25,19 @@
     <% for (var i = 0 ; i <=5 ; i++) { %>
         <a href="/<%= i %>">link [<%= i %>] %></a> <br>
         <%} %>
+        <script>
+            const counter_interval = setInterval(() => {
+                counter()
+            }, 1000);
+            function counter() {
+                max = document.getElementById('div_height').clientHeight - 50
+                let count = Math.floor(Math.random() * max)
+                document.getElementById('counter').style.marginTop = `${count}px`
+                document.getElementById('counter').style.transition = 'margin-top 300ms ease'
+
+                // line
+                document.getElementById('line').x1.baseVal.value = `${count}`
+            }
+        </script>
 </body>
 </html>
