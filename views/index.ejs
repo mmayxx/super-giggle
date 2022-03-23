@@ -1,3 +1,4 @@
+<!-- working with px but not with vh -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,36 +9,108 @@
 </head>
 <body>
     <h1>Welcome to Super-Giggle</h1>
-    <div id="div_height" style="width: 100%; height: 500px; outline: 1px solid green;">
-    <div id="counter" style="border-radius: 100%; background-color: #000; position: absolute; outline: 1px solid tomato; width: 25px; height: 25px; margin-left: 100px;" ></div>
-    <!-- div 2 [counter2] [ -->
-    <div id="counter2" style="border-radius: 100%; background-color: #000; position: absolute; outline: 1px solid tomato; width: 25px; height: 25px; margin-left: 150px;" ></div>
-    <!-- counter2 -- ] -->
-    <svg style="width: 500px; height: 500px;"><line id="line" x2="165" y1="250"y2="0" stroke="black" /></svg>
-    <!-- svg style height & width inherit || 500px -->
+    <!-- Node [ -->
+    <div id="trend-depiction" style="width: 100%; display: block; height: 75vh;">
+        <div id="node1" style="border-radius: 50%; position: absolute; margin-left: 10%;" ></div>
+        <div id="node2" style="border-radius: 50%; position: absolute; margin-left: 32%;" ></div>
+        <div id="node3" style="border-radius: 50%; position: absolute; margin-left: 55%;" ></div>
+        <div id="node4" style="border-radius: 50%; position: absolute; margin-left: 80%;" ></div>
+        <svg preserveAspectRatio="none" viewBox="0 0 500 500" style="position: absolute; width: inherit; height: 500px; "><line id="line1"  x1="55"  x2="165"  stroke-width="0.2%" />
+            <line id="line2"  x1="280" x2="165"  stroke-width="0.2%" />
+            <line id="line3"  x1="280" x2="405"  stroke-width="0.2%" />
+        </svg>
     </div>
+    <!-- Node ] -->
+    
     <!-- user search query [ -->
     <form action="/search_credentials" method="post">
-    <input type="search" name="s/q" />
+    <input type="search" name="s/q"/>
     <button type="submit">submit</button>
     </form>
-    <!-- ] -->
+    <!-- user search query ] -->
+
     <% for (var i = 0 ; i <=5 ; i++) { %>
         <a href="/<%= i %>">link [<%= i %>] %></a> <br>
         <%} %>
         <script>
             const counter_interval = setInterval(() => {
-                counter()
+                node()
             }, 1000);
-            function counter() {
-                max = document.getElementById('div_height').clientHeight - 50
-                let count = Math.floor(Math.random() * max)
-                document.getElementById('counter').style.marginTop = `${count}px`
-                document.getElementById('counter').style.transition = 'margin-top 300ms ease'
+            function node() {
+                $_safe_area = document.getElementById('trend-depiction').clientHeight
+                safe_area = $_safe_area - ($_safe_area / 6)
+                max = (safe_area)
+                node1_count = Math.floor(Math.random() * max)
+                node2_count = Math.floor(Math.random() * max)
+                node3_count = Math.floor(Math.random() * max)
+                node4_count = Math.floor(Math.random() * max) // a.k.a current
 
-                // line
-                document.getElementById('line').x1.baseVal.value = `${count}`
+                document.getElementById('node1').style.marginTop = `${node1_count}px`
+                document.getElementById('node1').style.transition = 'margin-top 300ms ease'
+                document.getElementById('node2').style.marginTop = `${node2_count}px`
+                document.getElementById('node2').style.transition = 'margin-top 300ms ease'
+
+                document.getElementById('node3').style.marginTop = `${node3_count}px`
+                document.getElementById('node3').style.transition = 'margin-top 300ms ease'
+                document.getElementById('node4').style.marginTop = `${node4_count}px`
+                document.getElementById('node4').style.transition = 'margin-top 300ms ease'
+
+
+                // stock fluctuation result [
+                    node4_count >= (max / 2) ?
+                        [
+                        document.getElementById('line1').style.stroke = 'red',// [ - downtrend]
+                        document.getElementById('line2').style.stroke = `red`,
+                        document.getElementById('line3').style.stroke = `red`,
+                        // node bg col here
+                        ]
+                    :
+                        [
+                        document.getElementById('line1').style.stroke = '#4affab', // [ + uptrend]
+                        document.getElementById('line2').style.stroke = `#4affab`,
+                        document.getElementById('line3').style.stroke = `#4affab`,
+                        // node bg col here
+                        ]
+                    // ]
+
+                // line_1
+                document.getElementById('line1').y1.baseVal.value = `${node1_count}`
+                document.getElementById('line1').y2.baseVal.value = `${node2_count}`
+
+                // line_2
+                document.getElementById('line2').y1.baseVal.value = `${node3_count}`
+                document.getElementById('line2').y2.baseVal.value = `${node2_count}`
+
+                // line_3
+                document.getElementById('line3').y1.baseVal.value = `${node3_count}`
+                document.getElementById('line3').y2.baseVal.value = `${node4_count}`
             }
         </script>
+
+        <style>
+            * {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+                line {
+                animation: move 1s infinite;
+                z-index: -1;
+            }
+            #node1, #node2, #node3, #node4 {
+                width: calc(16vw / 6);
+                height: calc(16vw / 6);
+                z-index: 1;
+                outline: 1px solid turquoise;
+            }
+            @keyframes move {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+        </style>
 </body>
 </html>
