@@ -1,17 +1,37 @@
 @use '_colors.scss' as *;
 @use '_functions.scss' as *;
 @use '_mixins.scss' as *;
-$card-height: 100px;
+@use '_buttons.scss' as *;
+@use '_images.scss' as *;
+$card-size: 50;
 .card-container {
     @include card-container;
 }
-.card {
-    display: inline-block;
-    background-color: clr-with-shade(sassy-orange);
-    margin: card-spacing-px(15);
-    height: $card-height * 2;
+.card-wrap {
+    @include card-wrap;
 }
-.card-0 {
-    color: clr($colors, grey-matter);
-    outline: 1px solid black;
+.card {
+    outline: 1px solid clr($colors, primer-cream);
+    @include card;
+}
+.card-sub-item {
+    @include card-sub-item;
+    margin: 0 5px 0 5px;
+}
+.card-logo {
+    flex-shrink: 1;
+    padding: 10px;
+}
+.card-name {
+    @include card-name;
+}
+.card-share {
+    @include card-btn;
+    margin-top: -5px;
+}
+.card-revenue {
+    @include card-revenue;
+}
+.card-rev-amount {
+    @include card-rev-amount;
 }

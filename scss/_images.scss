@@ -1,0 +1,24 @@
+@use '_functions.scss' as *;
+@use '_colors.scss' as *;
+$image-size: 50;
+@mixin card-logo-image {
+    outline: 1px solid clr-with-shade(logo-fantasy);
+    width: $image-size - 5px;
+    height: $image-size - 10px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+}
+@mixin card-arrow {
+    width: fit-content;
+    height: $image-size - 30px;
+    margin-left: $image-size - 5px;
+    background: clr-with-shade(logo-fantasy, 12, 0);
+    border-radius: 100%;
+    padding: 0 5px 0 5px;
+}
+.card-logo-image {
+    @include card-logo-image;
+}
+.card-arrow {
+    @include card-arrow;
+}

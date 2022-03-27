@@ -1,0 +1,13 @@
+@use '_font.scss' as *;
+@use '_colors.scss' as *;
+@use '_functions.scss' as *;
+@mixin card-btn {
+    display: block;
+    background: clr-with-shade(primer-cream, 5, 1);
+    color: clr($colors, grey-matter);
+    padding: 6px 20px 6px 20px;
+    font-size: $font-size-max - 85px;
+    margin-right: 10px;
+    border-radius: 3px;
+    text-decoration: none;
+}

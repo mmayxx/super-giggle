@@ -1,18 +1,85 @@
+.card-logo-image {
+  outline: 1px solid #d1d1d1;
+  width: 45px;
+  height: 40px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 5px;
+}
+
+.card-arrow {
+  width: fit-content;
+  height: 20px;
+  margin-left: 45px;
+  background: #f0f0f0;
+  border-radius: 100%;
+  padding: 0 5px 0 5px;
+}
+
 .card-container {
   overflow: auto;
   white-space: nowrap;
 }
 
-.card {
+.card-wrap {
   display: inline-block;
-  background-color: #f62828;
+  background-color: white;
   margin: 15px;
-  height: 200px;
+  height: 250px;
+  width: 250px;
 }
 
-.card-0 {
+.card {
+  outline: 1px solid #212121;
+  display: flex;
+  width: inherit;
+  height: inherit;
+  flex-direction: column;
+}
+
+.card-sub-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  margin: 0 5px 0 5px;
+}
+
+.card-logo {
+  flex-shrink: 1;
+  padding: 10px;
+}
+
+.card-name {
+  flex: 1 1 auto;
+  margin-top: -5px;
+}
+
+.card-share {
+  display: block;
+  background: #141414;
   color: #dee4f1;
-  outline: 1px solid black;
+  padding: 6px 20px 6px 20px;
+  font-size: 15px;
+  margin-right: 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  margin-top: -5px;
+}
+
+.card-revenue {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  color: #6e6e6e;
+  line-height: 18px;
+}
+
+.card-rev-amount {
+  font-size: 17px;
+  font-weight: 600;
+  text-align: left;
+  color: #2e2e2e;
 }
 
 * {
