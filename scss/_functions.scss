@@ -1,0 +1,22 @@
+@use '_colors.scss' as *;
+@function clr($base, $color_) {
+    $color: map-get($map: $base, $key: $color_);
+    @return $color
+};
+
+// pass 1 for dark shade & 0 for light
+@function clr-with-shade($color-shade, $but-how-much: 0, $lighten-or-darken: "") {
+    @if $lighten-or-darken == 1 {
+        @return darken(map-get($colors, $color-shade), $but-how-much);
+    }
+    @else if $lighten-or-darken == 0{
+        @return lighten(map-get($colors, $color-shade), $but-how-much);
+    }
+    @else {
+        @return darken(map-get($colors, $color-shade), ($but-how-much - $but-how-much));
+    }
+};
+
+@function card-spacing-px($card-margin) {
+    @return $card-margin+px;
+};

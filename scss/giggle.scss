@@ -1,0 +1,18 @@
+@use '_font.scss' as *;
+@use '_colors.scss' as *;
+@use '_functions.scss' as *;
+@use '_card.scss' as *;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font: 100% $font-stack;
+    color: clr($colors, body-fire);
+}
+
+#trend-depiction {
+    background-color: clr-with-shade(primer-cream, 25, 1);
+}
+

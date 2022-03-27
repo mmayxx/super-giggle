@@ -6,29 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super-Giggle - home</title>
+    <link rel="stylesheet" href="../public/css/giggle.css" />
     <script src="/public/node-graph.js" type="text/javascript"></script>
 </head>
 <body>
     <h1>Welcome to Super-Giggle</h1>    
-
-        <!-- trend depiction [-->
-        <div id="trend-depiction" style="outline: 1px solid black; margin: 21px 18px 21px 18px; height: fit-content;border-radius: 15px;">
-            <svg viewBox="0 0 200 200" style="outline: 1px solid red; overflow: visible; border-radius: inherit;">
-                <!-- links [ -->
-                <line id="link1" stroke="green" x1="25" x2="75"/>
-                <line id="link2" stroke="green" x1="75" x2="125"/>
-                <line id="link3" stroke="green" x1="125" x2="175"/>
-                <!-- links ] -->
-                
-                <!-- nodes [ -->
-                <circle id="node1" cx="25" r="5" stroke="green" stroke-width="0.2" fill="black" />
-                <circle id="node2" cx="75" r="5" stroke="green" stroke-width="0.2" fill="black" />
-                <circle id="node3" cx="125" r="5" stroke="green" stroke-width="0.2" fill="black" />
-                <circle id="node4" cx="175" r="5" stroke="green" stroke-width="0.2" fill="black" />
-                <!-- nodes ] -->
-            </svg>
-        </div>
-        <!-- trend depiction ] -->
 
             <!-- user search query [ -->
                 <form action="/search_credentials" method="post">
@@ -36,9 +18,43 @@
                     <button type="submit">search</button>
                 </form>
             <!-- user search query ] -->
-    
+
+        <!-- trend depiction [-->
+        <div id="trend-depiction" style="height: 40vw; width: 100%; border-radius: 15px;">
+            <svg viewBox="0 0 200 200" style=" height: inherit; width: inherit; overflow: visible; border-radius: inherit;">
+                <!-- links [ -->
+                <line id="link1" stroke="green" x1="25" x2="75"/>
+                <line id="link2" stroke="green" x1="75" x2="125"/>
+                <line id="link3" stroke="green" x1="125" x2="175"/>
+                <!-- links ] -->
+                
+                <!-- nodes [ -->
+                <circle id="node1" cx="25" r="5" stroke="green" stroke-width="0.2" fill="white" />
+                <circle id="node2" cx="75" r="5" stroke="green" stroke-width="0.2" fill="black" />
+                <circle id="node3" cx="125" r="5" stroke="green" stroke-width="0.2" fill="black" />
+                <circle id="node4" cx="175" r="5" stroke="green" stroke-width="0.2" fill="black" />
+
+                <circle id="node4" cx="200" r="5" stroke="green" stroke-width="0.2" fill="black" />
+                <circle id="node4" cx="225" r="5" stroke="green" stroke-width="0.2" fill="black" />
+                <circle id="node4" cx="250" r="5" stroke="green" stroke-width="0.2" fill="black" />
+                <circle id="node4" cx="275" r="5" stroke="green" stroke-width="0.2" fill="black" />
+                <!-- nodes ] -->
+            </svg>
+        </div>
+        <!-- trend depiction ] -->
+            
+        <div class="card-container">
         <% for (var i = 0 ; i <=5 ; i++) { %>
-            <a href="/stock<%= i %>">link [<%= i %>] %></a> <br>
-            <%} %>    
+            <div class="card card-<%=i%>">
+                this card <%=i%>
+                <br>
+                second section
+                <br>
+                third section
+                <br>
+                final
+            </div>
+            <%} %>
+        </div>
 </body>
 </html>

@@ -1,0 +1,17 @@
+@use '_colors.scss' as *;
+@use '_functions.scss' as *;
+@use '_mixins.scss' as *;
+$card-height: 100px;
+.card-container {
+    @include card-container;
+}
+.card {
+    display: inline-block;
+    background-color: clr-with-shade(sassy-orange);
+    margin: card-spacing-px(15);
+    height: $card-height * 2;
+}
+.card-0 {
+    color: clr($colors, grey-matter);
+    outline: 1px solid black;
+}
