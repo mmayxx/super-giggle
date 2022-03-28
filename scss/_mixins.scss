@@ -1,6 +1,7 @@
 @use '_colors.scss' as *;
 @use '_functions.scss' as *;
 @use '_font.scss' as *;
+
 @mixin card-container {
     overflow: auto;
     white-space: nowrap;
@@ -10,7 +11,7 @@
     display: inline-block;
     background-color: clr-with-shade(origin);
     margin: card-spacing-px(15);
-    height: 250px;
+    height: fit-content;
     width: 250px;
 }
 
@@ -47,4 +48,33 @@
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
+}
+
+@mixin card-flex-2 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin card-dot($dot-size, $background, $shade, $shade-option) {
+    display: inline-block;
+    width: $dot-size + px;
+    height: $dot-size + px;
+    border-radius: 100%;
+    background: clr-with-shade($background, $shade, $shade-option);
+}
+
+@mixin card-price {
+    font-size: $font-size-max - 76px;
+    color: clr-with-shade(primer-cream, 25, 1);
+}
+
+@mixin card-font-size {
+    font-size: 17px;
+}
+
+@mixin  card-mcap-pe-value {
+    font-size: $font-size-max - 85px;
+    color: clr-with-shade(primer-cream, 25, 1);
 }

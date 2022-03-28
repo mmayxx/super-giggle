@@ -15,6 +15,40 @@
   padding: 0 5px 0 5px;
 }
 
+.card-arrow-container::before {
+  content: " ";
+  outline: 1px solid #616161;
+  display: block;
+  position: relative;
+  width: 12px;
+  height: 0px;
+  transform: skewY(20deg);
+  margin: 0px 0 0 0;
+  padding: 0;
+}
+.card-arrow-container::after {
+  content: " ";
+  outline: 1px solid #616161;
+  display: block;
+  position: relative;
+  width: 12px;
+  height: 0px;
+  transform: skewY(20deg);
+  margin: -18px 0 0 0;
+  padding: 0;
+}
+
+.star img {
+  display: block;
+  vertical-align: middle;
+  width: 22px;
+  height: 22px;
+  background-color: #141414;
+  border-radius: 100%;
+  padding: 5px;
+  margin: 0 0 0 15px;
+}
+
 .card-container {
   overflow: auto;
   white-space: nowrap;
@@ -24,7 +58,7 @@
   display: inline-block;
   background-color: white;
   margin: 15px;
-  height: 250px;
+  height: fit-content;
   width: 250px;
 }
 
@@ -43,6 +77,7 @@
   align-items: center;
   text-align: center;
   margin: 0 5px 0 5px;
+  padding: 5px 0 5px 0;
 }
 
 .card-logo {
@@ -80,6 +115,86 @@
   font-weight: 600;
   text-align: left;
   color: #2e2e2e;
+}
+
+.card-sub-item-1 {
+  margin-top: 21px;
+}
+
+.card-stock-price {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  margin: 15px 0px 15px 0px;
+}
+
+.card-price {
+  flex-grow: 1;
+  font-size: 24px;
+  color: black;
+}
+
+.card-dots {
+  flex-grow: 1;
+}
+
+.card-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: black;
+}
+
+.card-today {
+  font-size: 17px;
+  margin-left: 30px;
+}
+
+.card-strip {
+  display: inline-block;
+  margin: 0 5px 0 5px;
+}
+
+.card-dot-strip {
+  margin: 15px 0 15px 15px;
+}
+
+.sym {
+  margin-left: 35px;
+}
+
+.card-dot-strip-circle {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  background: #3b3b3b;
+}
+
+.market-cap, .pe-ratio {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  margin: 10px 0px 10px 0px;
+}
+
+.market-cap-value, .pe-ratio-value {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  color: #6e6e6e;
+  line-height: 18px;
+  flex-grow: 1;
+  padding: 0 0 0 10px;
+}
+
+.mcap-num, .pe-num {
+  font-size: 15px;
+  color: black;
+  flex-grow: 1;
 }
 
 * {

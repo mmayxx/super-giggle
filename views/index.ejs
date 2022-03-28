@@ -23,21 +23,20 @@
         <div id="trend-depiction" style="height: 40vw; width: 100%; border-radius: 15px;">
             <svg viewBox="0 0 200 200" style=" height: inherit; width: inherit; overflow: visible; border-radius: inherit;">
                 <!-- links [ -->
-                <line id="link1" stroke="green" x1="25" x2="75"/>
-                <line id="link2" stroke="green" x1="75" x2="125"/>
-                <line id="link3" stroke="green" x1="125" x2="175"/>
+                <line id="link1" stroke="yellow" x1="-90" x2="-25"/>
+                <line id="link2" stroke="pink" x1="-25" x2="50"/>
+                <line id="link3" stroke="blue" x1="50" x2="125"/>
+                <line id="link4" stroke="green" x1="125" x2="200"/>
+                <line id="link5" stroke="red" x1="200" x2="275"/>
                 <!-- links ] -->
                 
                 <!-- nodes [ -->
-                <circle id="node1" cx="25" r="5" stroke="green" stroke-width="0.2" fill="white" />
-                <circle id="node2" cx="75" r="5" stroke="green" stroke-width="0.2" fill="black" />
-                <circle id="node3" cx="125" r="5" stroke="green" stroke-width="0.2" fill="black" />
-                <circle id="node4" cx="175" r="5" stroke="green" stroke-width="0.2" fill="black" />
-
-                <circle id="node4" cx="200" r="5" stroke="green" stroke-width="0.2" fill="black" />
-                <circle id="node4" cx="225" r="5" stroke="green" stroke-width="0.2" fill="black" />
-                <circle id="node4" cx="250" r="5" stroke="green" stroke-width="0.2" fill="black" />
-                <circle id="node4" cx="275" r="5" stroke="green" stroke-width="0.2" fill="black" />
+                <circle id="node1" cx="-90" r="5" stroke="green" stroke-width="0.2" fill="white" />
+                <circle id="node2" cx="-25" r="5" stroke="green" stroke-width="0.2" fill="white" />
+                <circle id="node3" cx="50" r="5" stroke="green" stroke-width="0.2" fill="white" />
+                <circle id="node4" cx="125" r="5" stroke="green" stroke-width="0.2" fill="white" />
+                <circle id="node5" cx="200" r="5" stroke="green" stroke-width="0.2" fill="white" />
+                <circle id="node6" cx="275" r="5" stroke="green" stroke-width="0.2" fill="white" />
                 <!-- nodes ] -->
             </svg>
         </div>
@@ -58,11 +57,54 @@
                         <a href="@mmayxx" class="card-share">share</a>
                     </div>
                     <!-- i [-->
-                    <div><img class="card-arrow" src="../public/assets/arrow.svg" /></div>
+                    <div class="card-arrow-container"><img class="card-arrow" src="../public/assets/arrow.svg" /></div>
                     <!-- i ] -->
                     <div class="card-sub-item-1">
-                        <div>item 1</div>
-                        <div>item 2</div>
+                        <div class="card-stock-price">
+                            <div class="card-price">$ 6352.32</div>
+                            <div class="card-dots">
+                                <div class="card-dot"></div>
+                                <div class="card-dot"></div>
+                                <div class="card-dot"></div>
+                            </div>
+                        </div>
+                        <div class="card-today"> &uarr; today</div>
+                    </div>
+                    <!-- card dot strip [ -->
+                    <div class="card-dot-strip">
+                        <div class="card-strip">
+                            <div class="card-dot-strip-circle"></div>
+                            <div class="card-dot-strip-circle"></div>
+                            <div class="card-dot-strip-circle"></div>    
+                        </div>
+                        <div class="card-strip">
+                            <div class="card-dot-strip-circle"></div>
+                            <div class="card-dot-strip-circle"></div>
+                            <div class="card-dot-strip-circle"></div>    
+                        </div>
+                        <div class="card-strip">
+                            <div class="card-dot-strip-circle"></div>
+                            <div class="card-dot-strip-circle"></div>
+                            <div class="card-dot-strip-circle"></div>    
+                        </div>
+                        <div class="card-strip">
+                            <p class="sym">Symbol</p>
+                        </div>
+                    </div>
+                    <!-- card dot strip ] -->
+                    <div class="market-cap">
+                        <div class="star">
+                            <img src="../public/assets/star.svg" />
+                        </div>
+                        <div class="market-cap-value">Mkt cap</div>
+                        <div class="mcap-num">21.85LCr</div>
+                    </div>
+                    <div class="pe-ratio">
+                        <div class="star">
+                            <img src="../public/assets/star.svg" />
+                        </div>
+                        <div class="pe-ratio-value">P/E ratio</div>
+                        <div class="pe-num">29.01</div>
                     </div>
                 </div>
             </div>

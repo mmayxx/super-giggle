@@ -4,6 +4,7 @@
 @use '_buttons.scss' as *;
 @use '_images.scss' as *;
 $card-size: 50;
+$card-margin: 10px 0px 10px 0px;
 .card-container {
     @include card-container;
 }
@@ -17,6 +18,7 @@ $card-size: 50;
 .card-sub-item {
     @include card-sub-item;
     margin: 0 5px 0 5px;
+    padding: 5px 0 5px 0;
 }
 .card-logo {
     flex-shrink: 1;
@@ -34,4 +36,51 @@ $card-size: 50;
 }
 .card-rev-amount {
     @include card-rev-amount;
+}
+.card-sub-item-1 {
+    margin-top: 21px;
+}
+.card-stock-price {
+    @include card-flex-2;
+    margin:  15px 0px 15px 0px;
+}
+.card-price {
+    flex-grow: 1;
+    @include card-price;
+}
+.card-dots {
+    flex-grow: 1;
+}
+.card-dot {
+    @include card-dot(10, primer-cream, 25, 1);
+}
+.card-today {
+    @include card-font-size;
+    margin-left: $card-size - 20 + px;
+}
+.card-strip { 
+    display: inline-block;
+    margin: 0 5px 0 5px;
+};
+.card-dot-strip {
+    margin: 15px 0 15px 15px;
+}
+.sym {
+    margin-left: $card-size - 15px;
+}
+.card-dot-strip-circle {
+    @include card-dot(5, primer-cream, 10, 0);
+}
+.market-cap, .pe-ratio {
+    @include card-flex-2;
+    margin: $card-margin;
+}
+.market-cap-value, .pe-ratio-value {
+    @include card-revenue;
+    flex-grow: 1;
+    padding: 0 0 0 $card-size - 40 + px;
+}
+.mcap-num, .pe-num {
+    @include card-mcap-pe-value;
+    flex-grow: 1;
 }
