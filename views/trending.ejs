@@ -14,6 +14,8 @@
     <!-- li [ -->
     <div class="list-wrap">
         <% for(i = 0; i < 5; i++) { %>
+            <!-- <div class="trending-list" onclick="window.location='/stock<%= trending[i].id_ %>';"> -->
+            <a class="link-wrap" href="/stock<%= trending[i].id_ %>">
             <div class="trending-list">
                 <div class="li-item">
                     <img src="../public/assets/apple.svg" class="card-logo-image" alt=" <%= trending[i].company %> logo">
@@ -21,6 +23,8 @@
                 <div class="li-item txt-lg"><%= trending[i].company %></div>
                 <div class="li-item txt-lg-heavy">$<%= trending[i].eps %></div>
             </div>    
+            </a>
+    <!-- <a href="/stock<%= trending[i].id_ %>">id : <%= trending[i].id_ %></a> -->
             <% } %>    
     </div>
         <!-- li ] -->

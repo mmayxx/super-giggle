@@ -12,8 +12,13 @@ app.get('/', function(req, res, next) {
     res.render('index', {Data_: $_data['Data']})
 })
 app.get('/stock:id', function(req, res, next) {
-    $_params = parseInt(req.params.id) + 1
-    res.render('resp', { id_ : $_params, data_ : $_data['Data'][$_params - 1]})
+    let data_;
+    for (details of $_data['Data']) {
+        if (details.id_ === req.params.id) {
+            data_ = details
+        }
+    }
+    res.render('resp', {data_ : data_, idx_ : data_.id_})
 })
 app.post('/search_credentials', function(req, res, next) {
     companies = []
