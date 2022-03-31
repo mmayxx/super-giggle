@@ -122,6 +122,9 @@ nav .logo {
     #toggle:checked ~ ul {
         bottom: 5ch;
     }
+    #toggle:checked ~ label #plus {
+        transform: rotateZ(40deg);
+    }
     #search-wrap {
         position: fixed;
         bottom: 100%;
@@ -129,6 +132,9 @@ nav .logo {
         width: 100%;
         height: calc(60vh / 2);
         background-color: clr($colors, minified-lime);
+        border-top-left-radius: 3%;
+        border-top-right-radius: 3%;
+        box-shadow: 0 -1px 0 rgba($color: clr-with-shade(primer-cream, 10, 0), $alpha: 0.12);
         z-index: -2;
         opacity: 0;
     }
@@ -177,6 +183,7 @@ nav .logo {
         display: block;
         width: calc(12vh / 2);
         height: calc(12vh / 2);
+        transition: transform .1s ease;
     }
     .btn-navbar {
         display: block;
@@ -189,9 +196,6 @@ nav .logo {
 }
 
 @media screen and (orientation: landscape) {
-    // .search-row {
-    //     margin: spacing-vh(12, 2, 0, 2);
-    // }
     .search-stocks {
         display: none;
     }

@@ -13,12 +13,12 @@
     <nav>
         <div class="logo">Super Giggle</div>
         <input type="checkbox" id="toggle">
-        <label for="home">
+        <a href="/">
             <img class="bottom-nav-ico" src="../public/assets/home.svg" />
-        </label>
-        <label for="trending">
+        </a>
+        <a href="/trending">
             <img class="bottom-nav-ico" src="../public/assets/trending.svg" />
-        </label>
+        </a>        
         <label for="toggle">
             <img class="bottom-nav-ico" id="plus" src="../public/assets/plus.svg" />
         </label>
@@ -35,13 +35,13 @@
             <!-- user search query ] -->        
             <img class="bottom-nav-ico" src="../public/assets/search.svg" />
         </label>
-        <button class="btn-navbar" onclick='alert("All data and information is provided as is for development purposes only")'>
+        <button class="btn-navbar" onclick='alert("All data and information is provided as is for development purposes only. None of the provided data makes up for providing financial advice in general.")'>
             <img class="bottom-nav-ico" src="../public/assets/i.svg" />
         </button>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
     <main id="main">
@@ -82,7 +82,6 @@
                         </div>
                         <p class="sym">AAPL</p>
                     </div>
-                    <!-- dne -->
                     <div class="card-sub-item-1">
                         <div class="card-stock-price">
                             <div class="card-price">$ 6352.32</div>
@@ -94,7 +93,7 @@
                         </div>
                         <div class="card-today"> &uarr; today</div>
                     </div>
-                        <a href="#checkout-[id number of stock]" class="btn-more">
+                        <a href="/stock<%=i%>" class="btn-more">
                             <img src="../public/assets/rarr.svg" alt="right arrow" class="btn-arrow">
                         </a>
                 </div>
