@@ -2,6 +2,8 @@
 @use '_colors.scss' as *;
 @use '_functions.scss' as *;
 @use '_card.scss' as *;
+@use '_navbar.scss' as *;
+@use '_queries.scss' as *;
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,8 +12,34 @@
 body {
     font: 100% $font-stack;
     color: clr($colors, body-fire);
+    background-color: clr($colors, minified-lime);
+}
+
+#main {
+    margin: spacing-px(0, 18, 0, 18);
+    padding: spacing-px(0, 5, 0, 5);
 }
 
 #trend-depiction {
     background-color: clr-with-shade(primer-cream, 25, 1);
+    height: 40vw;
+    width: 100%;
+    border-radius: 15px;
+}
+
+#trend-depiction svg {
+    height: inherit;
+    width: inherit;
+    overflow: visible;
+    border-radius: inherit;
+}
+
+#trend-depiction circle {
+    transition: all 300ms ease;
+}
+
+@media screen and (max-width: $phone) {
+    #trend-depiction {
+        margin-top: 10vh;
+    }
 }

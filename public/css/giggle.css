@@ -1,41 +1,27 @@
+.btn-more {
+  display: block;
+  background: #141414;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  margin: 5%;
+  padding: 3% 15% 3% 15%;
+  border: 0;
+  outline: none;
+  border-radius: 3px;
+}
+
+.btn-arrow {
+  width: 20vw;
+  height: 7.5vw;
+}
+
 .card-logo-image {
-  outline: 1px solid #d1d1d1;
-  width: 45px;
-  height: 40px;
-  padding: 5px 10px 5px 10px;
-  border-radius: 5px;
-}
-
-.card-arrow {
-  width: fit-content;
-  height: 20px;
-  margin-left: 45px;
-  background: #f0f0f0;
-  border-radius: 100%;
-  padding: 0 5px 0 5px;
-}
-
-.card-arrow-container::before {
-  content: " ";
-  outline: 1px solid #616161;
-  display: block;
-  position: relative;
-  width: 12px;
-  height: 0px;
-  transform: skewY(20deg);
-  margin: 0px 0 0 0;
-  padding: 0;
-}
-.card-arrow-container::after {
-  content: " ";
-  outline: 1px solid #616161;
-  display: block;
-  position: relative;
-  width: 12px;
-  height: 0px;
-  transform: skewY(20deg);
-  margin: -18px 0 0 0;
-  padding: 0;
+  outline: 0.2vh solid #d1d1d1;
+  width: 11.75vw;
+  height: 11.75vw;
+  padding: 20% 23% 20% 23%;
+  border-radius: 10%;
 }
 
 .star img {
@@ -52,73 +38,54 @@
 .card-container {
   overflow: auto;
   white-space: nowrap;
+  margin: 32px 0px 32px 0px;
 }
 
 .card-wrap {
   display: inline-block;
   background-color: white;
-  margin: 15px;
-  height: fit-content;
-  width: 250px;
+  margin: 5px 30px 5px 5px;
+  height: 100%;
+  width: 70%;
+  border-radius: 2%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 5px rgba(0, 0, 0, 0.12);
 }
 
 .card {
-  outline: 1px solid #212121;
   display: flex;
-  width: inherit;
-  height: inherit;
+  width: 100%;
   flex-direction: column;
 }
 
 .card-sub-item {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
   align-items: center;
-  text-align: center;
-  margin: 0 5px 0 5px;
-  padding: 5px 0 5px 0;
+  padding: 5.5% 5% 5.5% 5%;
 }
 
 .card-logo {
   flex-shrink: 1;
-  padding: 10px;
 }
 
 .card-name {
   flex: 1 1 auto;
-  margin-top: -5px;
-}
-
-.card-share {
-  display: block;
-  background: #141414;
-  color: #dee4f1;
-  padding: 6px 20px 6px 20px;
-  font-size: 15px;
-  margin-right: 10px;
-  border-radius: 3px;
-  text-decoration: none;
-  margin-top: -5px;
+  margin-left: 5%;
 }
 
 .card-revenue {
-  font-size: 14px;
+  font-size: 4vw;
   font-weight: 500;
   text-align: left;
   color: #6e6e6e;
-  line-height: 18px;
+  line-height: 4.5vw;
 }
 
 .card-rev-amount {
-  font-size: 17px;
+  font-size: 4.65vw;
   font-weight: 600;
   text-align: left;
   color: #2e2e2e;
-}
-
-.card-sub-item-1 {
-  margin-top: 21px;
 }
 
 .card-stock-price {
@@ -126,12 +93,12 @@
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
-  margin: 15px 0px 15px 0px;
+  padding: 5% 0 5% 0;
 }
 
 .card-price {
   flex-grow: 1;
-  font-size: 24px;
+  font-size: 6.75vw;
   color: black;
 }
 
@@ -141,62 +108,238 @@
 
 .card-dot {
   display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 100%;
+  width: 2.5vw;
+  height: 2.5vw;
   background: black;
+  border-radius: 100%;
 }
 
 .card-today {
-  font-size: 17px;
-  margin-left: 30px;
-}
-
-.card-strip {
-  display: inline-block;
-  margin: 0 5px 0 5px;
-}
-
-.card-dot-strip {
-  margin: 15px 0 15px 15px;
+  font-size: 4.75vw;
+  padding: 5% 0 5% 10%;
 }
 
 .sym {
-  margin-left: 35px;
+  font-size: 4.75vw;
+  padding: 1.5% 5% 1.5% 5%;
 }
 
-.card-dot-strip-circle {
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  border-radius: 100%;
-  background: #3b3b3b;
-}
-
-.market-cap, .pe-ratio {
+nav {
   display: flex;
-  justify-content: space-evenly;
+  height: 60px;
+  background-color: #fff;
   align-items: center;
-  text-align: center;
-  margin: 10px 0px 10px 0px;
+  justify-content: space-between;
+  padding: 0px 0px 0px 25px;
+  margin: 0px 0px 32px 0px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.12);
 }
 
-.market-cap-value, .pe-ratio-value {
-  font-size: 14px;
-  font-weight: 500;
-  text-align: left;
-  color: #6e6e6e;
-  line-height: 18px;
-  flex-grow: 1;
-  padding: 0 0 0 10px;
+nav ul {
+  display: flex;
+  list-style: none;
 }
 
-.mcap-num, .pe-num {
-  font-size: 15px;
+nav ul li a {
+  text-decoration: none;
   color: black;
-  flex-grow: 1;
+  margin: 0px 10px 0px 0px;
+  padding: 10px 35px 10px 35px;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
 }
 
+nav ul li a:hover {
+  background-color: #212121;
+  color: #fff;
+}
+
+nav .logo {
+  font-size: 25px;
+  font-weight: 600;
+  color: white;
+  background-color: #080808;
+  padding: 5px 15px 5px 15px;
+  border-radius: 3px;
+}
+
+.btn-search-img {
+  height: 25px;
+  width: 25px;
+}
+
+.search-row {
+  display: flex;
+  border: 1px solid #474747;
+  border-radius: 3px;
+}
+
+#search-wrap input[type=search] {
+  width: 25vw;
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 0px 0px 0px 15px;
+  font-size: 18px;
+}
+
+#search-wrap input[type=search]:focus {
+  border: none;
+  outline: none;
+}
+
+.btn-search-img-wrap {
+  padding: 3px 8px 3px 8px;
+  outline: none;
+  border: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.bottom-nav-ico, .btn-navbar, #toggle, #search, .search-stocks {
+  display: none;
+}
+
+@media screen and (max-width: 947px) {
+  nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 8vh;
+    padding: 0;
+    margin: 0;
+    justify-content: space-evenly;
+    z-index: 1;
+    background-color: #fff;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.12);
+  }
+
+  nav ul {
+    display: block;
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    height: 30ch;
+    bottom: -30ch;
+    z-index: -1;
+    transition: all 0.3s ease;
+  }
+
+  nav .logo {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    color: #080808;
+    padding: 1.8vh 0vh 1.8vh 0vh;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
+  }
+
+  nav ul li {
+    text-align: center;
+    padding: 10px 25px 10px 25px;
+    margin: 0px 0px 25px 0px;
+  }
+
+  nav ul li:nth-of-type(1) {
+    margin-top: 5ch;
+  }
+
+  nav ul li a {
+    margin: 0;
+    padding: 10px 50px 10px 50px;
+    border-radius: 2px;
+    outline: 1px solid #bababa;
+    color: black;
+  }
+
+  #toggle:checked ~ ul {
+    bottom: 5ch;
+  }
+
+  #search-wrap {
+    position: fixed;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 30vh;
+    background-color: #f5f5f5;
+    z-index: -2;
+    opacity: 0;
+  }
+
+  .search-stocks {
+    display: block;
+    font-size: 2rem;
+    color: #212121;
+    padding: 5vh 0vh 5vh 2.5vh;
+  }
+
+  .search-row {
+    margin: 0vh 2vh 0vh 2vh;
+    border: none;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12), 0 3px 4px rgba(0, 0, 0, 0.12);
+  }
+
+  #search-wrap input[type=search] {
+    display: block;
+    position: relative;
+    top: 40%;
+    width: 100%;
+    height: 4ch;
+    border: none;
+  }
+
+  #search-wrap input[type=submit] {
+    display: block;
+    position: relative;
+  }
+
+  #search:checked ~ #search-wrap {
+    position: absolute;
+    bottom: 100%;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  .btn-search-img-wrap {
+    border: 0;
+    border-left: 1.5px solid #f5f5f5;
+    outline: none;
+    padding: 5px 10px 5px 10px;
+    background: #fff;
+  }
+
+  .bottom-nav-ico:not(#plus) {
+    display: block;
+    width: 4vh;
+    height: 4vh;
+  }
+
+  #plus {
+    display: block;
+    width: 6vh;
+    height: 6vh;
+  }
+
+  .btn-navbar {
+    display: block;
+    background: #fff;
+    outline: none;
+    border: 0;
+  }
+
+  .btn-search-img {
+    width: 5vw;
+    height: 5vw;
+  }
+}
+@media screen and (orientation: landscape) {
+  .search-stocks {
+    display: none;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -206,10 +349,36 @@
 body {
   font: 100% Helvetica, sans-serif;
   color: #333;
+  background-color: #f5f5f5;
+}
+
+#main {
+  margin: 0px 18px 0px 18px;
+  padding: 0px 5px 0px 5px;
 }
 
 #trend-depiction {
   background-color: black;
+  height: 40vw;
+  width: 100%;
+  border-radius: 15px;
+}
+
+#trend-depiction svg {
+  height: inherit;
+  width: inherit;
+  overflow: visible;
+  border-radius: inherit;
+}
+
+#trend-depiction circle {
+  transition: all 300ms ease;
+}
+
+@media screen and (max-width: 947px) {
+  #trend-depiction {
+    margin-top: 10vh;
+  }
 }
 
 /*# sourceMappingURL=giggle.css.map */

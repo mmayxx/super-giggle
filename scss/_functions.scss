@@ -20,3 +20,15 @@
 @function card-spacing-px($card-margin) {
     @return $card-margin+px;
 };
+
+@function spacing-px($top: 0, $right: 0, $bottom: 0, $left: 0) {
+    @return $top + px $right + px $bottom + px $left + px;
+}
+
+@function border-rad-px($rad) {
+    @return $rad + px;
+}
+
+@function spacing-vh($top: 0, $right: 0, $bottom: 0, $left: 0) {
+    @return $top + vh $right + vh $bottom + vh $left + vh;
+}

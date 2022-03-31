@@ -5,38 +5,38 @@
 @mixin card-container {
     overflow: auto;
     white-space: nowrap;
+    margin: spacing-px(32, 0, 32, 0);
 };
 
 @mixin card-wrap {
     display: inline-block;
     background-color: clr-with-shade(origin);
-    margin: card-spacing-px(15);
-    height: fit-content;
-    width: 250px;
+    margin: spacing-px(5, 30, 5, 5);
+    height: 100%;
+    width: 70%;
 }
 
 @mixin card {
     display: flex;
-    width: inherit;
-    height: inherit;
+    width: 100%;
     flex-direction: column;
 }
 
 @mixin card-name {
     flex: 1 1 auto;
-    margin-top: -5px;
+    margin-left: 5%;
 }
 
 @mixin card-revenue {
-    font-size: $font-size-max - 86px;
+    font-size: calc(8vw / 2);
     font-weight: $font-weight-min * 5;
     text-align: left;
     color: clr-with-shade(primer-cream, 30, 0);
-    line-height: 18px;
+    line-height: calc(9vw / 2);
 }
 
 @mixin card-rev-amount {
-    font-size: $font-size-max - 83px;
+    font-size: calc(9.3vw / 2);
     font-weight: $font-weight-min * 6;
     text-align: left;
     color: clr-with-shade(primer-cream, 5, 0);
@@ -45,9 +45,7 @@
 @mixin card-sub-item {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
     align-items: center;
-    text-align: center;
 }
 
 @mixin card-flex-2 {
@@ -57,24 +55,28 @@
     text-align: center;
 }
 
-@mixin card-dot($dot-size, $background, $shade, $shade-option) {
+@mixin card-dot($background, $shade, $shade-option) {
     display: inline-block;
-    width: $dot-size + px;
-    height: $dot-size + px;
-    border-radius: 100%;
+    width: calc(5vw / 2);
+    height: calc(5vw / 2);
     background: clr-with-shade($background, $shade, $shade-option);
+    border-radius: 100%;
+}
+
+@mixin card-dot-sm($background, $shade, $shade-option) {
+    display: inline-block;
+    width: calc(2.5vw / 2);
+    height: calc(2.5vw / 2);
+    background: clr-with-shade($background, $shade, $shade-option);
+    border-radius: 100%;
 }
 
 @mixin card-price {
-    font-size: $font-size-max - 76px;
+    font-size: calc(13.5vw / 2);
     color: clr-with-shade(primer-cream, 25, 1);
 }
 
-@mixin card-font-size {
-    font-size: 17px;
-}
-
-@mixin  card-mcap-pe-value {
-    font-size: $font-size-max - 85px;
-    color: clr-with-shade(primer-cream, 25, 1);
+@mixin card-sym {
+    font-size: calc(9.5vw / 2);
+    padding: 1.5% 5% 1.5% 5%;
 }

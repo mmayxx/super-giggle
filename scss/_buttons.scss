@@ -4,10 +4,29 @@
 @mixin card-btn {
     display: block;
     background: clr-with-shade(primer-cream, 5, 1);
-    color: clr($colors, grey-matter);
-    padding: 6px 20px 6px 20px;
-    font-size: $font-size-max - 85px;
-    margin-right: 10px;
-    border-radius: 3px;
+    color: clr($colors, origin);
+    text-align: center;
     text-decoration: none;
+    margin: 5%;
+    padding: 3% 15% 3% 15%;
+    border: 0;
+    outline: none;
+    border-radius: 3px;
+}
+
+@mixin btn-nav {
+    background: clr($colors, origin);
+    outline: none;
+    border: 0;
+}
+
+@mixin rarr {
+    width: calc(40vw / 2);
+    height: calc(15vw / 2);
+}
+.btn-more {
+    @include card-btn;
+}
+.btn-arrow {
+    @include rarr;
 }

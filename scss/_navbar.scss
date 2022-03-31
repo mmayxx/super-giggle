@@ -1,0 +1,198 @@
+@use '_functions.scss' as *;
+@use '_colors.scss' as *;
+@use '_font.scss' as *;
+@use '_queries.scss' as *;
+@use '_buttons.scss' as *;
+nav {
+    display: flex;
+    height: 60px;
+    background-color: clr($colors, origin);
+    align-items: center;
+    justify-content: space-between;
+    padding: spacing-px(0, 0, 0, 25);
+    margin: spacing-px(0, 0, 32, 0);
+    box-shadow: 0 3px 5px rgba($color: #000000, $alpha: 0.12);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: clr-with-shade(primer-cream, 25, 1);
+    margin: spacing-px(0, 10, 0, 0);
+    padding: spacing-px(10, 35, 10, 35);
+    border-radius: border-rad-px(3);
+    transition: background-color .3s ease;
+}
+
+nav ul li a:hover {
+    background-color: clr($colors, primer-cream);
+    color: clr($colors, origin);
+}
+
+nav .logo {
+    font-size: $font-size-max - 75px;
+    font-weight: $font-weight-max - 300;
+    color: clr-with-shade(origin);
+    background-color: clr-with-shade(primer-cream, 10, 1);
+    padding: spacing-px(5, 15, 5, 15);
+    border-radius: 3px;
+}
+.btn-search-img {
+    height: 25px;
+    width: 25px;
+}
+.search-row {
+    display: flex;
+    border: 1px solid clr-with-shade(primer-cream, 15, 0);
+    border-radius: border-rad-px(3);
+}
+#search-wrap input[type = search] {
+    width: 25vw;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: spacing-px(0, 0, 0, 15);
+    font-size: $font-size-max - 82px;
+}
+#search-wrap input[type = search]:focus {
+    border: none;
+    outline: none;
+}
+.btn-search-img-wrap {
+    padding: spacing-px(3, 8, 3, 8);
+    outline: none;
+    border: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.bottom-nav-ico, .btn-navbar, #toggle, #search, .search-stocks { display: none; }
+@media screen and (max-width: $phone) {
+    nav {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: calc(16vh / 2);
+        padding: 0;
+        margin: 0;
+        justify-content: space-evenly;
+        z-index: 1;
+        background-color: clr($colors, origin);
+        box-shadow: 0 -1px 3px rgba($color: #000000, $alpha: 0.12);
+    }
+    nav ul {
+        display: block;
+        position: absolute;
+        background: clr($colors, origin);
+        width: 100%;
+        height: 30ch;
+        bottom: -30ch;
+        z-index: -1;
+        transition: all .3s ease;
+    }
+    // nav .logo { display: none; }
+    nav .logo {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        text-align: center;
+        background-color: clr($colors, origin);
+        color: clr-with-shade(primer-cream, 10, 1);
+        padding: spacing-vh(1.8, 0, 1.8, 0);
+        box-shadow: 0 2px 3px rgba($color: #000000, $alpha: 0.12);
+    }
+    nav ul li {
+        text-align: center;
+        padding: spacing-px(10, 25, 10, 25);
+        margin: spacing-px(0, 0, 25, 0);
+    }
+    nav ul li:nth-of-type(1) {
+        margin-top: 5ch;
+    }
+    nav ul li a {
+        margin: 0;
+        padding: spacing-px(10, 50, 10, 50);
+        border-radius: border-rad-px(2);
+        outline: 1px solid clr-with-shade(primer-cream, 60, 0);
+        color: clr-with-shade(primer-cream, 15, 1);
+    }
+    #toggle:checked ~ ul {
+        bottom: 5ch;
+    }
+    #search-wrap {
+        position: fixed;
+        bottom: 100%;
+        left: 0;
+        width: 100%;
+        height: calc(60vh / 2);
+        background-color: clr($colors, minified-lime);
+        z-index: -2;
+        opacity: 0;
+    }
+    .search-stocks {
+        display: block;
+        font-size: 2rem;
+        color: clr($colors, primer-cream);
+        padding: spacing-vh(5, 0, 5, 2.5);
+    }
+    .search-row {
+        margin: spacing-vh(0, 2, 0, 2);
+        border: none;
+        box-shadow: 0 2px 3px rgba($color: #000000, $alpha: 0.12), 0 3px 4px rgba($color: #000000, $alpha: 0.12);
+    }
+    #search-wrap input[type = search] {
+        display: block;
+        position: relative;
+        top: 40%;
+        width: 100%;
+        height: 4ch;
+        border: none;
+    }
+    #search-wrap input[type = submit] {
+        display: block;
+        position: relative;
+    }
+    #search:checked ~ #search-wrap {
+        position: absolute;
+        bottom: 100%;
+        opacity: 1;
+        transition: opacity .3s ease;
+    }
+    .btn-search-img-wrap {
+        border: 0;
+        border-left: 1.5px solid clr($colors, minified-lime);
+        outline: none;
+        padding: spacing-px(5, 10, 5, 10);
+        background: clr($colors, origin);
+    }
+    .bottom-nav-ico:not(#plus) {
+        display: block;
+        width: calc(8vh / 2);
+        height: calc(8vh / 2);
+    }
+    #plus {
+        display: block;
+        width: calc(12vh / 2);
+        height: calc(12vh / 2);
+    }
+    .btn-navbar {
+        display: block;
+        @include btn-nav;
+    }
+    .btn-search-img {
+        width: calc(10vw / 2);
+        height: calc(10vw / 2);
+    }
+}
+
+@media screen and (orientation: landscape) {
+    // .search-row {
+    //     margin: spacing-vh(12, 2, 0, 2);
+    // }
+    .search-stocks {
+        display: none;
+    }
+}
