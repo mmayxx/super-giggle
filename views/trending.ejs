@@ -5,14 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super-Giggle - Trending</title>
+    <link rel="stylesheet" href="../public/css/giggle.css">
 </head>
 <body>
+    <main id="main">
     <h1>Trending stocks in market - Top 5</h1>
-    <!-- limit : 5 -->
-    <% for(i = 0; i < 5; i++) { %>
-        <%= trending[i].eps %>
-        <%= trending[i].company %>
-        <br>
-        <% } %>
+
+    <!-- li [ -->
+    <div class="list-wrap">
+        <% for(i = 0; i < 5; i++) { %>
+            <div class="trending-list">
+                <div class="li-item">
+                    <img src="../public/assets/apple.svg" class="card-logo-image" alt=" <%= trending[i].company %> logo">
+                </div>
+                <div class="li-item txt-lg"><%= trending[i].company %></div>
+                <div class="li-item txt-lg-heavy">$<%= trending[i].eps %></div>
+            </div>    
+            <% } %>    
+    </div>
+        <!-- li ] -->
+        </main>
 </body>
 </html>
