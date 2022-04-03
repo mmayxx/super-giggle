@@ -1,12 +1,19 @@
 @use '_functions.scss' as *;
 @use '_colors.scss' as *;
+@use '_queries.scss' as *;
 $image-size: 50;
 @mixin card-logo-image {
     outline: 0.2vh solid clr-with-shade(logo-fantasy);
-    width: calc(23.5vw / 2);
-    height: calc(23.5vw / 2);
+    width: calc(18vw / 2);
+    height: calc(18vw / 2);
     padding: 20% 23% 20% 23%;
     border-radius: 10%;
+
+    @media screen and (min-width: $phone) {
+        width: calc(8.5vw / 2);
+        height: calc(8.5vw / 2);
+    }
+
 }
 .card-logo-image {
     @include card-logo-image;

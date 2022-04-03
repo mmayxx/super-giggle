@@ -3,6 +3,7 @@
 @use '_font.scss' as *;
 @use '_queries.scss' as *;
 @use '_buttons.scss' as *;
+$top-clrd-border: 3px solid clr-with-shade(winter-tree, 15, 0);
 nav {
     display: flex;
     height: 60px;
@@ -27,7 +28,10 @@ nav ul li a {
     border-radius: border-rad-px(3);
     transition: background-color .3s ease;
 }
-
+.active {
+    background-color: clr($colors, primer-cream);
+    color: clr($colors, origin);
+}
 nav ul li a:hover {
     background-color: clr($colors, primer-cream);
     color: clr($colors, origin);
@@ -47,7 +51,7 @@ nav .logo {
 }
 .search-row {
     display: flex;
-    border: 1px solid clr-with-shade(primer-cream, 15, 0);
+    border: 1px solid clr-with-shade(primer-cream, 65, 0);
     border-radius: border-rad-px(3);
 }
 #search-wrap input[type = search] {
@@ -68,6 +72,8 @@ nav .logo {
     border: 0;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    z-index: inherit;
+    cursor: pointer;
 }
 .bottom-nav-ico, .btn-navbar, #toggle, #search, .search-stocks { display: none; }
 @media screen and (max-width: $phone) {
@@ -91,18 +97,23 @@ nav .logo {
         height: 30ch;
         bottom: -30ch;
         z-index: -1;
+        border-top: $top-clrd-border;
         transition: all .3s ease;
     }
-    // nav .logo { display: none; }
     nav .logo {
         position: fixed;
         top: 0;
         width: 100%;
-        text-align: center;
+        font-size: calc(12.5vw / 2);
         background-color: clr($colors, origin);
         color: clr-with-shade(primer-cream, 10, 1);
-        padding: spacing-vh(1.8, 0, 1.8, 0);
+        padding: 2.5% 0 2.5% 5%;
         box-shadow: 0 2px 3px rgba($color: #000000, $alpha: 0.12);
+        background-image: linear-gradient(90deg, clr-with-shade(hyper-sky, 5, 0), clr-with-shade(hyper-sky, 25, 0));
+        background-repeat: no-repeat;
+        background-size: 42% 10%;
+        background-position-x: calc(12vw / 2);
+        background-position-y: 70%;
     }
     nav ul li {
         text-align: center;
@@ -120,7 +131,7 @@ nav .logo {
         color: clr-with-shade(primer-cream, 15, 1);
     }
     #toggle:checked ~ ul {
-        bottom: 5ch;
+        bottom: calc(10vw / 2);
     }
     #toggle:checked ~ label #plus {
         transform: rotateZ(40deg);
@@ -134,7 +145,7 @@ nav .logo {
         background-color: clr($colors, minified-lime);
         border-top-left-radius: 3%;
         border-top-right-radius: 3%;
-        box-shadow: 0 -1px 0 rgba($color: clr-with-shade(primer-cream, 10, 0), $alpha: 0.12);
+        border-top: $top-clrd-border;
         z-index: -2;
         opacity: 0;
     }

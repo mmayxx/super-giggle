@@ -1,6 +1,7 @@
 @use '_font.scss' as *;
 @use '_colors.scss' as *;
 @use '_functions.scss' as *;
+@use '_queries.scss' as *;
 @mixin card-btn {
     display: block;
     background: clr-with-shade(primer-cream, 5, 1);
@@ -11,7 +12,7 @@
     padding: 3% 15% 3% 15%;
     border: 0;
     outline: none;
-    border-radius: 3px;
+    border-radius: 3px;    
 }
 
 @mixin btn-nav {
@@ -21,12 +22,54 @@
 }
 
 @mixin rarr {
-    width: calc(40vw / 2);
-    height: calc(15vw / 2);
+    width: calc(18vw / 2);
+    height: calc(8vw / 2);
+    @media screen and (min-width: $phone) {
+        display: none;
+    }
 }
 .btn-more {
     @include card-btn;
+    @media screen and (min-width: $phone) {
+        &::before {
+            content: 'more \00a0 \00a0->';
+            display: block;
+            font-size: calc(3vw /2);
+        }    
+    }
 }
 .btn-arrow {
     @include rarr;
+}
+.btn-show-more {
+    @include card-btn;
+    background-color: clr-with-shade(iggy-green, 15, 0);
+    cursor: pointer;
+    padding: 1.5% 5% 1.5% 5%;
+    margin: 5% 0 0 0;
+    font-size: calc(2.5vw / 2);
+    @media screen and (max-width: $phone) {
+        font-size: calc(10vw / 2);
+        padding: 2.5% 10% 2.5% 10%;
+        font-size: calc(8.5vw / 2);
+    }
+}
+@mixin btn-slider {
+    display: inline-block;
+    background: clr-with-shade(primer-cream, 5, 1);
+    color: clr($colors, origin);
+    border: 0;
+    outline: none;
+}
+.btn-slide {
+    @include btn-slider;
+    padding: 1.5%;
+    font-size: calc(2.5vw / 2);
+    cursor: pointer;
+    background-color: clr-with-shade(primer-cream, 5, 0);
+    margin: 0 2.5% 0 0;
+    border-radius: 3px;
+    @media screen and (max-width: $phone) {
+        display: none;
+    }
 }

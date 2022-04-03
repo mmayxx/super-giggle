@@ -4,6 +4,7 @@
 @use '_card.scss' as *;
 @use '_navbar.scss' as *;
 @use '_queries.scss' as *;
+@use '_mixins.scss' as *;
 * {
     box-sizing: border-box;
     margin: 0;
@@ -37,8 +38,219 @@ body {
 #trend-depiction circle {
     transition: all 300ms ease;
 }
-@media screen and (max-width: $phone) {
-    #trend-depiction {
-        margin-top: 10vh;
+h1 {
+    font-size: calc(8.5vw / 2);
+    color: clr-with-shade(primer-cream, 15, 1);
+    margin: 2.5% 0 2.5% 2.5%;
+}
+.whatistrending {
+    font-size: calc(6.5vw / 2);
+    color: clr-with-shade(primer-cream, 0, 1);
+    margin: 2.5% 0 2.5% 2.5%;
+}
+.content-header {
+    margin: 0 0 0 2.5%;
+    font-size: calc(6.2vw / 2);
+}
+.stock-info table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 5%; // *
+    font: 100% $font-stack-2;
+}
+.stock-info table td {
+    text-align: left;
+    border: 1px solid clr-with-shade(primer-cream, 70, 0);
+    padding: 2.5%;
+    font-size: calc(3.2vw / 2);
+    @media screen and (max-width: $phone) {
+        font-size: calc(8.5vw / 2);
     }
+}
+.stock-info table th {
+    text-align: left;
+    padding: 2.5%;
+    background-color: clr-with-shade(pistachii, 20, 1);
+    color: clr($colors, origin);
+    font-size: calc(4.2vw / 2);
+    &:nth-of-type(1) {
+        border-top-left-radius: calc(2.5vw / 2);
+    }
+    &:nth-of-type(2) {
+        border-top-right-radius: calc(2.5vw / 2);
+    }
+    @media screen and (max-width: $phone) {
+        font-size: calc(10.5vw / 2);
+    }
+}
+.stock-info table tr:nth-child(even) {
+    background-color: clr($colors, origin);
+}
+.stock-info table tr:nth-last-child(1) {
+    border-bottom: 3px solid clr-with-shade(pistachii, 25, 1);
+}
+.search-txt {
+    font-weight: 600;
+    color: clr-with-shade(iggy-green, 5, 1);
+}
+.no-res {
+    font-weight: 600;
+    color: clr-with-shade(sassy-orange, 5, 0);
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    background-color: clr-with-shade(primer-cream, 10, 1);
+    color: white;
+    font-size: calc(3.5vw / 2);
+    padding: 2.5% 2.5% 5% 2.5%;
+    margin: 5% 0 0 0;
+    @media screen and (max-width: $phone) {
+        padding-bottom: 25%;
+        margin-top: 15%;
+    }
+}
+
+// design by mmayxx
+.github-link {
+    display: none;
+}
+
+.design-by {
+    border: 1px solid clr-with-shade(hyper-sky, 5, 0);
+    font-size: calc(6.5vw / 2);
+    text-align: center;
+    width: fit-content;
+    margin: 2.5% auto 5% auto;
+    padding: 0.5% 2.5% 0.5% 2.5%;
+    color: clr($colors, origin);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: calc(1.5vw / 3.5) solid clr-with-shade(sun-shine, 5, 0);
+    @media screen and (max-width: $phone) {
+        font-size: calc(14.5vw / 2);
+        margin-top: 10%;
+    }
+}
+
+.links-container {
+    display: flex;
+    @media screen and (max-width: $phone) {
+        flex-direction: column;
+        text-align: center;
+        .links-sub-container:nth-of-type(1) {
+            order: 5;
+        }     
+    }
+}
+.links-sub-container {
+    flex: 1 1 auto;
+    &:nth-last-child(2){
+        ul {
+            &:nth-of-type(2) {
+                margin: 6.5% 0 0 0;
+                p {
+                    margin: 0 0 6.5% 0;
+                }
+            }
+        }
+    }
+    &:nth-last-child(4) {
+        p {
+            &:nth-of-type(2) {
+                margin: 6.5% 0 0 0;
+            }
+        }
+    }
+}
+.links-sub-container .social-links {
+    display: inline-flex;
+    width: 100%;
+    margin-top: 2.5%;
+    @media screen and (max-width: $phone) {
+        place-content: center;
+    }
+}
+.social-links a {
+    font-size: calc(3.8vw / 2);
+    &:nth-of-type(1) {
+        @include social-link;
+        margin-left: 0;
+        color: clr($colors, origin);
+        background-color: clr-with-shade(vibrant, 5, 0);
+    }
+    &:nth-of-type(2) {
+        @include social-link;
+        padding: calc(1.2vw / 2) calc(2.8vw / 2);
+        color: clr($colors, origin);
+        background-color: clr-with-shade(ocean-cool, 25, 1);
+        @media screen and (max-width: $phone) {
+            padding: calc(4.2vw / 2) calc(9.5vw / 2);
+        }
+    }
+    &:nth-of-type(3) {
+        @include social-link;
+        color: clr($colors, origin);
+        background-color: clr-with-shade(hyper-sky, 15, 1);
+    }
+    &:nth-of-type(4) {
+        @include social-link;
+        color: clr($colors, origin);
+        background-color: clr-with-shade(ocean-cool, 5, 0);
+    }
+
+    @media screen and (max-width: $phone) {
+        font-size: calc(10.5vw / 2);
+    }
+}
+.links-sub-container ul li {
+    list-style: none;
+    margin: 2.5% 0 0 0;
+}
+.links-sub-container ul li a{
+    color: clr-with-shade(hyper-sky, 10, 1);
+    text-decoration: none;
+    font-size: calc(3.2vw / 2);
+    letter-spacing: 1px;
+    @media screen and (max-width: $phone) {
+        font-size: calc(8.5vw / 2);
+    }
+}
+.links-sub-container p {
+    font-weight: 600;
+    font-size: calc(3.8vw / 2);
+    margin: 5% 0 5% 0;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    @media screen and (max-width: $phone) {
+        font-size: calc(9.3vw / 2);
+    }
+}
+@media screen and (max-width: $phone) {
+    h1 {
+        font-size: calc(18vw / 2);
+        margin: 5% 0 8% 5%;
+    }
+    .greeting {
+        padding: calc(35vw / 2) 0 0 0;
+    }
+    .whatistrending {
+        display: none;
+    }
+    .content-header {
+        font-size: calc(14.5vw / 2);
+        margin: 21% 5% 8% 5%;
+    }
+    .github-link {
+        display: inline-block;
+        font-size: calc(8.5vw / 2);
+        text-decoration: none;
+        color: clr-with-shade(vibrant, 5, 0);
+        position: relative;
+        right: -25%;
+    }    
 }

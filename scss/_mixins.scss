@@ -1,6 +1,7 @@
 @use '_colors.scss' as *;
 @use '_functions.scss' as *;
 @use '_font.scss' as *;
+@use '_queries.scss' as *;
 
 @mixin card-container {
     overflow: auto;
@@ -14,6 +15,9 @@
     margin: spacing-px(5, 30, 5, 5);
     height: 100%;
     width: 70%;
+    @media screen and (min-width: $phone) {
+        width: 35%;
+    }
 }
 
 @mixin card {
@@ -33,18 +37,25 @@
     text-align: left;
     color: clr-with-shade(primer-cream, 30, 0);
     line-height: calc(9vw / 2);
+    @media screen and (min-width: $phone) {
+        font-size: calc(3.2vw / 2);
+        line-height: calc(3vw / 2);
+    }
 }
 
 @mixin card-rev-amount {
     font-size: calc(9.3vw / 2);
-    font-weight: $font-weight-min * 6;
+    font-weight: $font-weight-min * 5;
     text-align: left;
     color: clr-with-shade(primer-cream, 5, 0);
+    @media screen and (min-width: $phone) {
+        font-size: calc(3.5vw / 2);
+    }
 }
 
 @mixin card-sub-item {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; // rm
     align-items: center;
 }
 
@@ -61,6 +72,10 @@
     height: calc(5vw / 2);
     background: clr-with-shade($background, $shade, $shade-option);
     border-radius: 100%;
+    @media screen and (min-width: $phone) {
+        width: calc(2vw / 2);
+        height: calc(2vw / 2);
+    }
 }
 
 @mixin card-dot-sm($background, $shade, $shade-option) {
@@ -73,17 +88,58 @@
 
 @mixin card-price {
     font-size: calc(13.5vw / 2);
+    font-weight: $font-weight-min * 6;
     color: clr-with-shade(primer-cream, 25, 1);
+    @media screen and (min-width: $phone) {
+        font-size: calc(5.5vw / 2);
+    }
 }
 
 @mixin card-sym {
     font-size: calc(9.5vw / 2);
     padding: 1.5% 5% 1.5% 5%;
+    @media screen and (min-width: $phone) {
+        font-size: calc(4vw / 2);
+    }
 }
 
+@mixin card-today-q {
+    @media screen and (min-width: $phone) {
+        font-size: calc(3.5vw / 2);
+    }
+}
 @mixin card-strip-lyt {
     display: flex;
     width: 100%;
     flex-direction: row;
     align-items: center;
+}
+
+@mixin pie-ul-li-pseu {
+    content: ' ';
+    display: block;
+    position: relative;
+    top: calc(3.5vw);
+    left: -20%;
+    width: calc(4.5vw / 2);
+    height: calc(4.5vw / 2);
+    border-radius: 100%;
+    @media screen and (min-width: $phone) {
+        width: calc(2vw / 2);
+        height: calc(2vw / 2);
+        top: calc(2.5vw / 2);
+        left: -10%;
+    }
+}
+
+@mixin a-link {
+    text-decoration: none;
+}
+@mixin  social-link {
+    padding: calc(1.2vw / 2) calc(2.2vw / 2);
+    margin: 1.5% 0 0 5%;
+    border-radius: 100%;
+    @media screen and (max-width: $phone) {
+        padding: calc(4.2vw / 2) calc(7.5vw / 2);
+    }
 }

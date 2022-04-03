@@ -6,15 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super-Giggle - Trending</title>
     <link rel="stylesheet" href="../public/css/giggle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <main id="main">
-    <h1>Trending stocks in market - Top 5</h1>
+    <nav>
+        <div class="logo">
+            Super Giggle
+            <span>
+                <a href="https://github.com/mmayxx" class="github-link">@mmayxx</a>
+            </span>
+        </div>
+        <input type="checkbox" id="toggle">
+        <a href="/">
+            <img class="bottom-nav-ico" src="../public/assets/home.svg" />
+        </a>
+        <a href="/trending">
+            <img class="bottom-nav-ico" src="../public/assets/trending.svg" />
+        </a>        
+        <label for="toggle">
+            <img class="bottom-nav-ico" id="plus" src="../public/assets/plus.svg" />
+        </label>
+        <label for="search">
+        <input type="checkbox" id="search">
+                <!-- user search query [ -->
+                <form action="/search_credentials" method="post" id="search-wrap">
+                    <p class="search-stocks">search stocks</p>
+                    <div class="search-row">
+                        <input type="search" name="s/q"/>
+                        <button class="btn-search-img-wrap" type="submit"><img class="btn-search-img" src="../public/assets/search.svg" /></button>    
+                    </div>
+                </form>
+            <!-- user search query ] -->        
+            <img class="bottom-nav-ico" src="../public/assets/search.svg" />
+        </label>
+        <button class="btn-navbar" onclick='alert("All data and information is provided as is for development purposes only. None of the provided data makes up for providing financial advice in general.")'>
+            <img class="bottom-nav-ico" src="../public/assets/i.svg" />
+        </button>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
+    <h1 class="content-header">Trending stocks in market - Top 5</h1>
+    <main id="main">
     <!-- li [ -->
     <div class="list-wrap">
         <% for(i = 0; i < 5; i++) { %>
-            <!-- <div class="trending-list" onclick="window.location='/stock<%= trending[i].id_ %>';"> -->
             <a class="link-wrap" href="/stock<%= trending[i].id_ %>">
             <div class="trending-list">
                 <div class="li-item">
@@ -24,10 +63,71 @@
                 <div class="li-item txt-lg-heavy">$<%= trending[i].eps %></div>
             </div>    
             </a>
-    <!-- <a href="/stock<%= trending[i].id_ %>">id : <%= trending[i].id_ %></a> -->
             <% } %>    
     </div>
         <!-- li ] -->
         </main>
+                <!-- footer start -->
+                <div class="footer">
+                    <a href="https://github.com/mmayxx" class="design-by">mmayxx</a>
+                    <div class="links-container">
+                        <div class="links-sub-container">
+                            <!-- #1 -->
+                            <p>Explore</p>
+                            <ul>
+                                <li><a href="#footer-link">link1</a></li>
+                                <li><a href="#footer-link">link2</a></li>
+                                <li><a href="#footer-link">link3</a></li>
+                            </ul>
+        
+                            <p>Social</p>
+                            <div class="social-links">
+                                <a href="#@mmayxxinstagram">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                                <a href="#@mmayxxfacebook">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                                <a href="#@mmayxxtwitter">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                                <a href="#@mmayxxlinkedin">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="links-sub-container">
+                            <p>Overview</p>
+                            <!-- #2 -->
+                            <ul>
+                                <li><a href="#footer-link">link4</a></li>
+                                <li><a href="#footer-link">link5</a></li>
+                                <li><a href="#footer-link">link6</a></li>
+                            </ul>
+                        </div>
+                        <div class="links-sub-container">
+                            <!-- #3 -->
+                            <ul>
+                                <p>About</p>
+                                <li><a href="#footer-link">link7</a></li>
+                                <li><a href="#footer-link">link8</a></li>
+                            </ul>
+        
+                            <ul>
+                                <p>More</p>
+                                <li><a href="#footer-link">link9</a></li>
+                                <li><a href="#footer-link">link10</a></li>
+                            </ul>
+                        </div>
+                        <div class="links-sub-container">
+                            <p>You may like</p>
+                            <ul>
+                                <li><a href="#footer-link">link11</a></li>
+                                <li><a href="#footer-link">link12</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- footer end -->        
 </body>
 </html>

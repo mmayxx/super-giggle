@@ -5,8 +5,188 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>req/url:stocks:<%= idx_ %>'</title>
+    <link rel="stylesheet" href="../public/css/giggle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <h1><%= JSON.stringify(data_) %></h1>
+    <nav>
+        <div class="logo">
+            Super Giggle
+            <span>
+                <a href="https://github.com/mmayxx" class="github-link">@mmayxx</a>
+            </span>
+        </div>
+        <input type="checkbox" id="toggle">
+        <a href="/">
+            <img class="bottom-nav-ico" src="../public/assets/home.svg" />
+        </a>
+        <a href="/trending">
+            <img class="bottom-nav-ico" src="../public/assets/trending.svg" />
+        </a>        
+        <label for="toggle">
+            <img class="bottom-nav-ico" id="plus" src="../public/assets/plus.svg" />
+        </label>
+        <label for="search">
+        <input type="checkbox" id="search">
+                <!-- user search query [ -->
+                <form action="/search_credentials" method="post" id="search-wrap">
+                    <p class="search-stocks">search stocks</p>
+                    <div class="search-row">
+                        <input type="search" name="s/q"/>
+                        <button class="btn-search-img-wrap" type="submit"><img class="btn-search-img" src="../public/assets/search.svg" /></button>    
+                    </div>
+                </form>
+            <!-- user search query ] -->        
+            <img class="bottom-nav-ico" src="../public/assets/search.svg" />
+        </label>
+        <button class="btn-navbar" onclick='alert("All data and information is provided as is for development purposes only. None of the provided data makes up for providing financial advice in general.")'>
+            <img class="bottom-nav-ico" src="../public/assets/i.svg" />
+        </button>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <h1 class="content-header"><%= data_.company %></h1>
+    <main id="main">
+        <div class="info-container">
+        <div class="circle-container">
+            <div id="circular-stats"></div>
+            <div class="item-prop">
+                <ul>
+                    <li>Diluted EPS</li>
+                    <li>Net Change in Cash</li>
+                    <li>Revenue</li>
+                </ul>
+            </div>
+        </div>
+        <div class="prop-container">
+            <div class="company-description">
+                <p class="info-txt">About</p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim eos repellat reiciendis.
+                <span class="more">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, aliquam.
+                    To now more check out the official site @ <a href="#official-website-of-company">companyname.com</a>
+                    <p>CEO : <a href="#company-ceo">ceo-name</a></p>
+                    <p>FOUNDED : <%= new Date().toLocaleTimeString() %></p>
+                    <p>HEADQUARTERS : <a href="#company-location">Autin, texas</a></p>
+                </span>
+                <br>
+                <button onclick="show_more()" class="btn-show-more">more</button>
+            </div>
+            <div class="people-also-search-for">
+                <p class="info-txt-rec">people also search for</p>
+                <div class="recommendation-container">
+                    <% for(i = 0; i <= 3; i++) { %>
+                        <div class="recommended-card">
+                            <div class="recommended-card-item">
+                                <p>Index</p>
+                                <p>BSE SENSEX</p>
+                                <p>59,279.69</p>
+                                <p>&uarr; 1.21%</p>
+                            </div>
+                        </div>
+                        <% } %>    
+                </div>
+                <button class="slide-left btn-slide" onclick="slide_left()">&larr;</button>
+                <button class="slide-right btn-slide">&rarr;</button>
+            </div>
+        </div>
+        </div>
+        <div class="stock-info">
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>MARKET CAP</td>
+                    <td><%= data_.MCAP %>T USD</td>
+                </tr>
+                <tr>
+                    <td>P/E RATIO</td>
+                    <td><%= data_.PEratio %></td>
+                </tr>
+                <tr>
+                    <td>NET INCOME</td>
+                    <td><%= data_.NetIncome %></td>
+                </tr>
+                <tr>
+                    <td>COST OF REVENUE</td>
+                    <td><%= data_.COR %>B</td>
+                </tr>
+                <tr>
+                    <td>OPERATING INCOME</td>
+                    <td><%= data_.MCAP %>B</td>
+                </tr>
+            </table>
+        </div>
+    </main>
+            <!-- footer start -->
+            <div class="footer">
+                <a href="https://github.com/mmayxx" class="design-by">mmayxx</a>
+                <div class="links-container">
+                    <div class="links-sub-container">
+                        <!-- #1 -->
+                        <p>Explore</p>
+                        <ul>
+                            <li><a href="#footer-link">link1</a></li>
+                            <li><a href="#footer-link">link2</a></li>
+                            <li><a href="#footer-link">link3</a></li>
+                        </ul>
+    
+                        <p>Social</p>
+                        <div class="social-links">
+                            <a href="#@mmayxxinstagram">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                            <a href="#@mmayxxfacebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="#@mmayxxtwitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="#@mmayxxlinkedin">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="links-sub-container">
+                        <p>Overview</p>
+                        <!-- #2 -->
+                        <ul>
+                            <li><a href="#footer-link">link4</a></li>
+                            <li><a href="#footer-link">link5</a></li>
+                            <li><a href="#footer-link">link6</a></li>
+                        </ul>
+                    </div>
+                    <div class="links-sub-container">
+                        <!-- #3 -->
+                        <ul>
+                            <p>About</p>
+                            <li><a href="#footer-link">link7</a></li>
+                            <li><a href="#footer-link">link8</a></li>
+                        </ul>
+    
+                        <ul>
+                            <p>More</p>
+                            <li><a href="#footer-link">link9</a></li>
+                            <li><a href="#footer-link">link10</a></li>
+                        </ul>
+                    </div>
+                    <div class="links-sub-container">
+                        <p>You may like</p>
+                        <ul>
+                            <li><a href="#footer-link">link11</a></li>
+                            <li><a href="#footer-link">link12</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- footer end -->    
+    <script src="../public/circle-stats.js"></script>
+    <script src="../public/show-more.js"></script>
 </body>
 </html>

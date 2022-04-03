@@ -3,6 +3,7 @@
 @use '_mixins.scss' as *;
 @use '_buttons.scss' as *;
 @use '_images.scss' as *;
+@use '_queries.scss' as *;
 $card-size: 50;
 $card-margin: 10px 0px 10px 0px;
 $card-shadow: 0 1px 3px rgba($color: #000000, $alpha: 0.12), 0px 1px 5px rgba($color: #000000, $alpha: 0.12);
@@ -19,12 +20,10 @@ $card-shadow: 0 1px 3px rgba($color: #000000, $alpha: 0.12), 0px 1px 5px rgba($c
 }
 .card-sub-item {
     @include card-sub-item;
-    // margin: 0 5px 0 5px; required
     padding: 5.5% 5% 5.5% 5%;
 }
 .card-logo {
     flex-shrink: 1;
-    // padding: 10px; required
 }
 .card-name {
     @include card-name;
@@ -37,9 +36,7 @@ $card-shadow: 0 1px 3px rgba($color: #000000, $alpha: 0.12), 0px 1px 5px rgba($c
 }
 .card-stock-price {
     @include card-flex-2;
-    // margin:  15px 0px 15px 0px; required in percent
-    // outline: 1px solid red;
-    padding: 5% 0 5% 0;
+    padding: 5% 0 0 0;
 }
 .card-price {
     flex-grow: 1;
@@ -49,11 +46,34 @@ $card-shadow: 0 1px 3px rgba($color: #000000, $alpha: 0.12), 0px 1px 5px rgba($c
     flex-grow: 1;
 }
 .card-dot {
-    @include card-dot(primer-cream, 25, 1);
+    @include card-dot(winter-tree, 15, 0);
 }
 .card-today {
     font-size: calc(9.5vw / 2);
-    padding: 5% 0 5% 10%;
+    padding: 0 0 5% 10%;
+    @include card-today-q;
+    &::before {
+        content: '';
+        display: block;
+        position: relative;
+        width: calc(21vw / 2);
+        height: calc(8.5vw / 2);
+        left: calc(-2.5vw / 1.5);
+        top: calc(8vw / 2.2);
+        background-color: clr-with-shade(iggy-green, 50, 0);
+        border-radius: 3px;
+
+        @media screen and (max-width: $phone) {
+            top: calc(15vw / 2);
+            width: calc(42.8vw / 2);
+            height: calc(15vw / 2);
+        }
+    
+    }
+}
+.card-today p {
+    position: relative;
+    color: clr-with-shade(iggy-green, 25, 1)
 }
 .sym {
     @include card-sym;
@@ -62,12 +82,46 @@ $card-shadow: 0 1px 3px rgba($color: #000000, $alpha: 0.12), 0px 1px 5px rgba($c
 // trending list
 .link-wrap {
     text-decoration: none;
+    position: relative;
+    left: 25%;
+    @media screen and (max-width: $phone) {
+        left: 0;
+    }
+}
+.link {
+    @include card-price;
+    padding: 0 0 0 2.5%;
+}
+.list-wrap {
+    display: block;
+}
+.link-under {
+    @include a-link;
+    &::before {
+        content: '';
+        display: block;
+        position: relative;
+        top: calc(10vw / 2);
+        width: calc(65vw / 2);
+        height: calc(1.5vw / 2);
+        background: clr-with-shade(hyper-sky, 5, 1);
+        @media screen and (max-width: $phone) {
+            top: calc(23.5vw / 2);
+            width: calc(150vw / 2);
+            height: calc(3.5vw / 2);
+        }
+    }
 }
 .trending-list {
     @include card-strip-lyt;
     box-shadow: $card-shadow;
     padding: 2.5% 1.5% 2.5% 1.5%;
-    margin: 2.5% 0 2.5% 0;
+    margin: 5% 0 5% 0;
+    @media screen and (min-width: $phone) {
+        width: 50%;
+        padding: 1%;
+        border-radius: 5px;
+    }
 }
 .li-item:nth-of-type(2) {
     flex: 1 1 auto;
@@ -83,8 +137,167 @@ $card-shadow: 0 1px 3px rgba($color: #000000, $alpha: 0.12), 0px 1px 5px rgba($c
 .txt-lg {
     font-size: calc(8.5vw / 2);
     font-weight: 500;
+    @media screen and (min-width: $phone) {
+        font-size: calc(4.5vw / 2);
+    }
 }
 .txt-lg-heavy {
     font-size: calc(12vw / 2);
     font-weight: 600;
+    @media screen and (min-width: $phone) {
+        font-size: calc(4.5vw / 2);
+    }
+}
+
+// stats
+.info-container {
+    display: flex;
+    @media screen and (max-width: $phone) {
+        flex-direction: column;
+    }
+}
+.prop-container {
+    flex: 1 1 auto;
+    width: 50%;
+    @media screen and (max-width: $phone) {
+        width: 100%;
+    }
+}
+.info-txt {
+    font-size: calc(4.5vw / 2);
+    font-weight: 600;
+    color: clr-with-shade(primer-cream, 5, 0);
+    &::before {
+        content: ' ';
+        display: block;
+        position: relative;
+        top: calc(5.5vw /2);
+        z-index: -1;
+        width: calc(15vw / 2);
+        height: calc(1vw / 2);
+        background-image: linear-gradient(90deg, clr-with-shade(pistachii, 10, 0), clr-with-shade(hyper-sky, 15, 0));
+        @media screen and (max-width: $phone) {
+            width: calc(32.5vw / 2);
+            height: calc(2vw / 2);
+            top: calc(12vw / 2);
+        }
+    }
+    @media screen and (max-width: $phone) {
+        font-size: calc(10.5vw / 2);
+    }
+}
+.company-description {
+    padding: 5%;
+    font-size: calc(3.2vw / 2);
+    @media screen and (max-width: $phone) {
+        font-size: calc(9.7vw / 2);
+    }
+}
+.company-description a {
+    color: clr-with-shade(sassy-orange, 5, 0);
+}
+.circle-container {
+    display: flex;
+    width: 50%;
+    box-shadow: 0 3px 5px rgba($color: #000000, $alpha: 0.12), 0 4px 6px rgba($color: #000000, $alpha: 0.12);
+    padding: 5% 0 5% 2.5%;
+    place-items: center;
+    background-color: clr($colors, origin);
+    @media screen and (max-width: $phone) {
+        width: 100%;
+    }
+}
+#circular-stats {
+    display: block;
+    width: calc(50vw);
+    height: calc(50vw);
+    border-radius: 100%;
+    @media screen and (min-width: $phone) {
+        width: calc(25vw);
+        height: calc(25vw);
+    }
+}
+.item-prop {
+    flex: 1 1 auto;
+}
+.item-prop ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.item-prop ul li {
+    margin: 0 0 0 40%;
+    font-size: calc(6.5vw / 2);
+    color: clr-with-shade(primer-cream, 16, 0);
+    &:nth-of-type(1)::before {
+        @include pie-ul-li-pseu;
+        background-color: clr($colors, pistachii);
+    }
+    &:nth-of-type(2)::before {
+        @include pie-ul-li-pseu;
+        background-color: clr($colors, cream-paper);
+    }
+    &:nth-of-type(3)::before {
+        @include pie-ul-li-pseu;
+        background-color: clr($colors, primer-cream);
+    }
+    @media screen and (min-width: $phone) {
+        font-size: calc(2.6vw / 2);
+        margin: 0 0 0 25%;
+    }
+}
+
+.people-also-search-for {
+    padding: 0 5% 0 5%;
+}
+.people-also-search-for .info-txt-rec {
+    margin: 0 0 1.5% 0;
+    font-size: calc(4.5vw / 2);
+    font-weight: 400;
+    @media screen and (max-width: $phone) {
+        font-size: calc(10vw / 2);
+    }
+}
+.recommendation-container {
+    @include card-container;
+}
+.recommended-card {
+    @include card-wrap;
+    height: fit-content;
+    border-radius: 5px;
+    box-shadow: $card-shadow;
+}
+.recommended-card-item {
+    padding: 8% 1.5% 5% 5%;
+}
+.recommended-card-item p {
+    font-size: calc(2.5vw / 2);
+    @media screen and (max-width: $phone) {
+        font-size: calc(10vw / 2);
+    }
+}
+.recommended-card-item p:nth-of-type(1) {
+    outline: 1px solid clr-with-shade(primer-cream, 5, 0);
+    width: fit-content;
+    height: fit-content;
+    padding: 0 5% 0 5%;
+    border-radius: 3px;
+    font-size: calc(2.5vw / 2);
+    @media screen and (max-width: $phone) {
+        font-size: calc(9vw / 2);
+    }
+}
+.recommended-card-item p:nth-of-type(2) {
+    margin: 2.5% 0 0 0;
+}
+.recommended-card-item p:nth-of-type(3) {
+    margin: 10% 0 0 0;
+}
+.recommended-card-item p:nth-of-type(4) {
+    background-color: clr-with-shade(iggy-green, 50, 0);
+    width: fit-content;
+    padding: 1.5% 5% 1.5% 5%;
+    border-radius: 3px;
+    color: clr-with-shade(iggy-green, 5, 1);
 }
